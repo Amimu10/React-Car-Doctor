@@ -1,21 +1,26 @@
 
-import React from 'react';
+import React, { useContext } from 'react';
 import { MdOutlineShoppingBag } from "react-icons/md";
 import { IoIosSearch } from "react-icons/io";
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../Provider/AuthProvider';
 
 
 const Navbar = () => {
-
+const {user} = useContext(AuthContext); 
     const navItems = <>
      <li><Link to="/">Home</Link></li>
      <li><Link to="/about">About</Link></li>
      <li><Link to="/service">Service</Link></li>
      <li><Link to="/contact">Contact</Link></li>
+   {
+    user?   <li><Link to="/login">LogOut</Link></li> : 
+    <li><Link to="/login">Login</Link></li>
+   }
     
     </>
     return (
-   <div className=" bg-base-400">
+   <div className="">
    <div className="navbar container mx-auto h-24 ">
         <div className="navbar-start">
           <div className="dropdown">
@@ -35,7 +40,7 @@ const Navbar = () => {
             </div>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow text-[18px]">
+              className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow text-[18px] font-semibold">
             {navItems}
             </ul>
           </div>
@@ -44,7 +49,7 @@ const Navbar = () => {
           </Link> 
         </div>
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1 text-[18px]">
+          <ul className="menu menu-horizontal px-1 text-[18px] font-semibold">
           {navItems}
           </ul>
         </div>
