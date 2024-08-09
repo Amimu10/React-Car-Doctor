@@ -6,8 +6,8 @@ import parts from "../../../public/assets/images/about_us/parts.jpg";
 const About = () => {
     return (
      <div className="container mx-auto">
-   <div className="hero mt-12">
-        <div className="hero-content flex-col lg:flex-row">
+   <div className=" mt-12">
+        <div className=" lg:flex flex-col lg:flex-row">
         <div className="lg:w-1/2 relative">
         <img src={person} className=" w-3/4 rounded-lg " />
         <img src={parts} className="w-1/2 border-8 border-white rounded-lg absolute right-5 top-1/2" />
