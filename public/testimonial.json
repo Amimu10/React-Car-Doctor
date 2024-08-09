@@ -1,0 +1,37 @@
+[
+    {
+        "image": "https://i.ibb.co/n7RMZvX/person-1.png",
+        "name": "John Doe",
+        "title": "Software Engineer",
+        "description": "John is a seasoned software engineer with over 10 years of experience in the tech industry.",
+        "rating": 4.8
+    },
+    {
+        "image": "https://i.ibb.co/VWCGtbm/person-2.png",
+        "name": "Jane Smith",
+        "title": "Graphic Designer",
+        "description": "Jane is a creative graphic designer who specializes in branding and digital illustration.",
+        "rating": 3.6
+    },
+    {
+        "image": "",
+        "name": "Michael Brown",
+        "title": "Project Manager",
+        "description": "Michael is an expert project manager with a knack for leading teams to success on complex projects.",
+        "rating": 4.9
+    },
+    {
+        "image": "",
+        "name": "Emily White",
+        "title": "Data Scientist",
+        "description": "Emily is a data scientist with a passion for turning raw data into actionable insights.",
+        "rating": 4.7
+    },
+    {
+        "image": "",
+        "name": "David Green",
+        "title": "Marketing Specialist",
+        "description": "David is a marketing specialist with a strong background in digital marketing and SEO strategies.",
+        "rating": 4.5
+    }
+]
