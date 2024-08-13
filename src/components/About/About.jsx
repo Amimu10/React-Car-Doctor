@@ -5,7 +5,7 @@ import parts from "../../../public/assets/images/about_us/parts.jpg";
 
 const About = () => {
     return (
-     <div className="container mx-auto">
+     <div id="about" className="container mx-auto">
    <div className=" mt-12">
         <div className=" lg:flex flex-col lg:flex-row">
         <div className="lg:w-1/2 relative">

@@ -20,7 +20,7 @@ const signIn = (email, password) => {
      return signInWithEmailAndPassword(auth, email, password);
 }
 
-const logOut = (auth) =>{
+const logOut = () =>{
     setLoading(true);
     return signOut(auth)
 }

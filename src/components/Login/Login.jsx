@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import LoginImg from "../../../public/assets/images/login/login.svg";
 // import { FaGoogle } from "react-icons/fa6";
 import googleImg from "../../../public/assets/icons/google.png";
@@ -10,6 +10,7 @@ import Swal from "sweetalert2";
 const Login = () => {
     const {signIn} = useContext(AuthContext);
     const [showPassword, setShowPassword] = useState(false);
+    const location = useLocation();
     const navigate = useNavigate(); 
 
     const handleLogin = (e) => {
@@ -22,6 +23,7 @@ const Login = () => {
         signIn(email, password)
         .then(result => {
             console.log(result.user);
+            navigate(location?.state ? location?.state : "/") 
             Swal.fire({
                 position: "top-center",
                 icon: "success",
@@ -29,7 +31,7 @@ const Login = () => {
                 showConfirmButton: false,
                 timer: 1500
               });
-              navigate("/")
+          
            })
         .catch(error => {
             console.log(error.message);

@@ -10,6 +10,8 @@ import AuthProvider from "./Provider/AuthProvider";
 import ServiceDetails from "./components/ServiceDetails/ServiceDetails";
 import CheckOut from "./components/CheckOut/CheckOut";
 import ErrorPage from "./ErrorPage/ErrorPage";
+import Bookings from "./components/Bookings/Bookings";
+import PrivateRoute from "./PrivateRoute/PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -39,14 +41,20 @@ const router = createBrowserRouter([
         element: <CheckOut></CheckOut>,
         loader: ({params}) => fetch(`http://localhost:3000/services/${params.id}`) 
       },
+      {
+        path: "/bookings", 
+        element :<PrivateRoute> <Bookings></Bookings></PrivateRoute>
+      }
     ],
   },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
-    <AuthProvider>
+<div className="lg:px-8 px-4">
+<React.StrictMode>
+  <AuthProvider>
       <RouterProvider router={router} />
     </AuthProvider>
   </React.StrictMode>
+</div>
 );

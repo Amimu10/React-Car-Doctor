@@ -30,8 +30,8 @@ const ServiceDetails = () => {
           <p className="text-justify">{description}</p>
           <div className="grid grid-cols-2 gap-3">
             {
-                facility.map (item => <>
-                <div className="p-4 card my-8 w-[350px] bg-[#F3F3F3] rounded-md border-2 border-t-[#FF3811]">
+                facility.map (item => <> 
+                <div  className="p-4 card my-8 w-[350px] bg-[#F3F3F3] rounded-md border-2 border-t-[#FF3811]">
                 <h3> {item.name}</h3>
                 <p>{item.details}</p>
                 </div>

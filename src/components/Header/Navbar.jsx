@@ -7,20 +7,37 @@ import { AuthContext } from '../../Provider/AuthProvider';
 
 
 const Navbar = () => {
-const {user} = useContext(AuthContext); 
+const {user, logOut} = useContext(AuthContext); 
+
+
+const handleLogOut = () => {
+  logOut()
+  .then(result => {
+    console.log(result.user);
+  })
+  .catch(error => {
+    console.log(error.message);
+  })
+}
     const navItems = <>
      <li><Link to="/">Home</Link></li>
-     <li><Link to="/about">About</Link></li>
-     <li><Link to="/service">Service</Link></li>
-     <li><Link to="/contact">Contact</Link></li>
+     <li><a href="#about" >About</a></li>
+     <li><a href="#service">Service</a></li>
    {
-    user?   <li><Link to="/login">LogOut</Link></li> : 
-    <li><Link to="/login">Login</Link></li>
+    user?.email ?   <>
+         <li><Link to="/bookings">My Bookings</Link></li>
+
+    <li><Link to="/login"><button onClick={handleLogOut}>Logout</button></Link></li> 
+    </>
+    : 
+    <li><Link to="/login">Login</Link></li> 
    }
-    
+
+
+
     </>
     return (
-   <div className="">
+   <div className="my-8">
    <div className="navbar container mx-auto h-24 ">
         <div className="navbar-start">
           <div className="dropdown">
